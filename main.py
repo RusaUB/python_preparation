@@ -1,4 +1,4 @@
-#Траектория тела в терминале 
+#Траектория тела в терминале тест
 #x = (speed**2*math.sin(2*angle))/9,18 #на сколько метров улетел
 import math 
 import matplotlib.pyplot as plt
