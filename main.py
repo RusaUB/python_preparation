@@ -1,4 +1,4 @@
-#Траектория тела в терминале тест
+#Траектория тела в терминале тест SAM
 #x = (speed**2*math.sin(2*angle))/9,18 #на сколько метров улетел
 import math 
 import matplotlib.pyplot as plt
@@ -19,7 +19,7 @@ def landed(masse,speed,angle,maxTime):
         y0 = -0,5*10*t**2 + speed*math.sin(angle)*t
         y.append(y0)
 
-landed(10,20,math.pi/4,20)
+landed(10,20,math.pi/4,10)
 
 def Graph():
     for k in z:
