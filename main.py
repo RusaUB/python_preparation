@@ -1,29 +1,27 @@
-#Траектория тела в терминале тест SAM
-#x = (speed**2*math.sin(2*angle))/9,18 #на сколько метров улетел
-import math 
-import matplotlib.pyplot as plt
-import termplotlib as tpl
-import inspect
+from tkinter import *
+from tkinter.ttk import *
 
-x = []
-y = []
-z = []
-
-
-def landed(masse,speed,angle,maxTime):
-    for t in range(maxTime):
-        x0 = speed*math.cos(angle)*t
-        x.append(x0)
-        z0 = ((-0.5*10*x0**2)/speed**2*pow(math.cos(angle),2)) + x0*math.tan(angle)
-        z.append(z0)
-        y0 = -0,5*10*t**2 + speed*math.sin(angle)*t
-        y.append(y0)
-
-landed(10,20,math.pi/4,10)
-
-def Graph():
-    for k in z:
-        print(" "* round(k) +"#")
-        print("#")
-
-print(Graph())
+master = Tk()
+master.geometry("175x175")
+ 
+# Tkinter string variable
+# able to store any string value
+v = StringVar(master, "1")
+ 
+# Dictionary to create multiple buttons
+values = {"RadioButton 1" : "1",
+        "RadioButton 2" : "2",
+        "RadioButton 3" : "3",
+        "RadioButton 4" : "4",
+        "RadioButton 5" : "5"}
+ 
+# Loop is used to create multiple Radiobuttons
+# rather than creating each button separately
+for (text, value) in values.items():
+    Radiobutton(master, text = text, variable = v,
+        value = value).pack(side = TOP, ipady = 5)
+ 
+# Infinite loop can be terminated by
+# keyboard or mouse interrupt
+# or by any predefined function (destroy())
+mainloop()
