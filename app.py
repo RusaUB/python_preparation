@@ -1,14 +1,30 @@
 import tkinter as tk
+from tkinter import *
 
 app = tk.Tk()
+firstname = StringVar()
+age = IntVar()
+
+def enregistrer_en_texte():
+  firstname_info = firstname.get()
+  age_info = age.get()
+  age_info = str(age_info)
+  print(firstname_info, age_info)
+
+  file = open("user.txt", "w")
+  file.write(firstname_info)
+  file.write(age_info)
+  file.close()
+  print(" User ", firstname_info, " has been registered successfully")
 
 
 #input text
 tk.Label(app, text="Nom et prenom").grid(row=0)
 tk.Label(app, text="Age").grid(row=1)
 
-input_1 = tk.Entry(app)
-input_2 = tk.Entry(app)
+input_1 = tk.Entry(app, textvariable = firstname, width = "30")
+input_2 = tk.Entry(app, textvariable = age, width = "30")
+
 
 input_1.grid(row=0, column=1)
 input_2.grid(row=1, column=1)
@@ -47,6 +63,6 @@ tk.Checkbutton(app, text = "science").grid(column=2, row=8)
 
 tk.Checkbutton(app, text = "litterature").grid(column=3, row=8)
 
-tk.Button(app, text = "Submit").grid(row = 9, column=1)
+tk.Button(app, text = "Submit", command=enregistrer_en_texte).grid(row = 9, column=1)
 
 app.mainloop()
