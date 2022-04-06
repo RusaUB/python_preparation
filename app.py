@@ -55,7 +55,7 @@ tk.Radiobutton(app, text = "Europe", variable = v,
 
 
 #Centre d'interet
-tk.Label(app, text= "Cnetre d'interet").grid(row = 8, column=0)
+tk.Label(app, text= "Centre d'interet").grid(row = 8, column=0)
 
 tk.Checkbutton(app, text = "art").grid(column=1, row=8)
 
